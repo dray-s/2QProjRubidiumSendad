@@ -7,33 +7,44 @@
 		<meta charset="UTF-8">
 		<meta name="author" content="Elijah Dray P. Sendad">
 		<meta name="keywords" content="HTML, CSS, CS3">
-		<meta name="revised" content="21-12-2021">
+		<meta name="revised" content="04-01-2022">
 	
 		<link rel="stylesheet" href="css/styles.css" type="text/css" />
 	</head>
 	<body>
-		<div class="navibar">
-			<img src="images/sudokuhub.png" alt="Website Icon">
-			<h1 class="title">[Homepage]</h1>
-		</div>
+	
+		<header>
+			<div class="navibar">
+				<img src="images/sudokuhub.png" alt="Website Icon">
+				<h1 class="title">[Homepage]</h1>
+			</div>
+		</header>
 		
-		<div class="navibar">
-			<table>
-			<tr>
-				<td class="navibar-button">Puzzles</td>
-				<td class="navibar-button">About Sudoku Puzzles</td>
-				<td class="navibar-button">Random Puzzle!</td>
-				<td class="navibar-button">Puzzle Editor</td>
-				<td class="navibar-button"><a href="index.html" style="color:white">Home</a></td>
-				<td class="navibar-button">Search...</td>
-			</tr>
-			</table>
-		</div>
+		<nav>
+			<div class="navibar">
+				<table>
+					<tr>
+						<td class="navibar-button">Puzzles</td>
+						<td class="navibar-button">About Sudoku Puzzles</td>
+						<td class="navibar-button">Random Puzzle!</td>
+						<td class="navibar-button">Puzzle Editor</td>
+						<td	class="navibar-button"><a href="index.html" style="color:white">Home</a></td>
+						<td class="navibar-button">Search...</td>
+					</tr>
+				</table>
+			</div>
+		</nav>
+		
+		<audio autoplay  id="introMusic">
+			<source src="mmfiles/intro-jingle.mp3" type="audio/mpeg">
+			Your browser doesn't support audio elements.
+		</audio>
 		
 		<div class="main">
 			<div class="box">
 				<!-- Left Box: Puzzle Showcase -->
 				<div>
+					<section>
 					<div class="content-group" style="border-color:#ffcc00">
 						<p style="text-align:center">
 							<b>Hello and welcome to SudokuHub!</b> <br>
@@ -42,6 +53,7 @@
 							<i>Have Fun Solving!</i>
 						</p>
 					</div>
+					</section>
 					
 					<div class="divider">
 						<p style="text-align:center">
@@ -49,6 +61,7 @@
 						</p>
 					</div>
 					
+					<section>
 					<div class="content-group" style="display:table;border-color:#0066ff">
 						<p style="text-align:left">
 						<a href="pages/puzzle_page.html" style="color:white">
@@ -59,6 +72,7 @@
 							</p>
 						</a>
 					</div>
+					</section>
 					
 					<div class="divider">
 						<p style="text-align:center">
@@ -66,6 +80,7 @@
 						</p>
 					</div>
 					
+					<section>
 					<div class="content-group" style="display:table;border-color:#0066ff">
 						<p style="text-align:left">
 						<img src="images/sudokuicon-normal.png" alt="Puzzle Icon" class="icon">
@@ -74,6 +89,7 @@
 							</div>
 						</p>
 					</div>
+					</section>
 					
 					<div class="divider">
 						<p style="text-align:center">
@@ -81,6 +97,7 @@
 						</p>
 					</div>
 					
+					<section>
 					<div class="content-group" style="display:table;border-color:#00cc00">
 						<p style="text-align:left">
 						<img src="images/sudokuicon-diagonal.png" alt="Puzzle Icon" class="icon">
@@ -89,17 +106,21 @@
 							</div>
 						</p>
 					</div>
+					</section>
+					
 				</div>
-				
+			
 				<!-- Right Box: Others -->
 				<div>
+					<section>
 					<div class="content-group" style="border-color:#cc3300;font-size:30px">
 						<p style="text-align:center">
 							<b>The Current Time Is:</b> <br>
 							00:00:00 AM UTC<br>
-							<i>November 17th, 2021</i>
+							<i>January 04th, 2022</i>
 						</p>
 					</div>
+					</section>
 					
 					<div class="divider">
 						<p style="text-align:center">
@@ -107,6 +128,24 @@
 						</p>
 					</div>
 					
+					<section>
+					<div class="content-group" style="border-color:#0033cc;font-size:24px">
+						<p style="text-align:center">
+							<b>Audio Settings:</b> <br>
+							<button type="button" onclick="playintro()"><i>Play Audio</i></button><br>
+							<input type="range" min="0" step="0.01" max="1" value="1" id="volumeSlider">
+							<i><span id="audioOutput">100%</span></i>
+						</p>
+					</div>
+					</section>
+					
+					<div class="divider">
+						<p style="text-align:center">
+							<b>|  |  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  |  |  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  |  |  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  |  |</b>
+						</p>
+					</div>
+					
+					<article>
 					<div class="content-group" style="display:table;border-color:#9966ff">
 						<p style="text-align:left">
 						<img src="images/sudokuicon-empty.png" alt="Puzzle Icon" class="icon">
@@ -115,6 +154,7 @@
 							</div>
 						</p>
 					</div>
+					</article>
 					
 					<div class="divider">
 						<p style="text-align:center">
@@ -122,6 +162,7 @@
 						</p>
 					</div>
 					
+					<article>
 					<div class="content-group" style="display:table;border-color:#660066">
 						<p style="text-align:left">
 						<img src="images/sudokuicon-downarrow.png" alt="Puzzle Icon" class="icon">
@@ -130,17 +171,34 @@
 							</div>
 						</p>
 					</div>
+					</article>
 				</div>
 			</div>
 		</div>
 		
-		<div class="footer">
-			<h4>
-				Note:
-			<br>All images, code, and information were created personally by Elijah Dray Sendad based on his prior experience on sudoku puzzles.
-			<br>No references were used in the making of this website up to this point. 
-			<br>Images were made using Microsoft Paint. Code help was provided by the CS3 LGs and W3Schools.
-			</h4>
-		</div>
+		<footer>
+			<div class="footer">
+				<h4>
+					Notes, Credits, and References:
+				<br>All images, code, and information were created personally by Elijah Dray Sendad based on his prior experience on sudoku puzzles.
+				<br>Images were made using Microsoft Paint, a simple graphics editing tool included in all versions of Microsoft Windows. <a href="https://support.microsoft.com/en-us/windows/get-microsoft-paint-a6b9578c-ed1c-5b09-0699-4ed8115f9aa9">Get MS Paint</a>
+				<br>Audio is made using OnlineSequencer, an online music sequencer made by Jacob Morgan and George Burdell. <a href="https://onlinesequencer.net/">Website Link to the Sequencer</a>
+				<br>Coding help was provided by the CS3 LGs and W3Schools.
+				</h4>
+			</div>
+		</footer>
+	
+	<script>
+		var audioVolume = document.getElementById("volumeSlider").value;
+		var introAudio = document.getElementById("introMusic");
+
+		function playintro() {
+			audioVolume = document.getElementById("volumeSlider").value;
+			introAudio.volume = audioVolume;
+			document.getElementById("audioOutput").innerHTML = Math.round(audioVolume * 100) + "%"
+			introAudio.play();
+		}
+	</script>
+	
 	</body>
 </html>
