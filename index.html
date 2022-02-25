@@ -7,7 +7,7 @@
 		<meta charset="UTF-8">
 		<meta name="author" content="Elijah Dray P. Sendad">
 		<meta name="keywords" content="HTML, CSS, CS3">
-		<meta name="revised" content="04-01-2022">
+		<meta name="revised" content="25-02-2022">
 	
 		<link rel="stylesheet" href="css/styles.css" type="text/css" />
 	</head>
@@ -16,7 +16,6 @@
 		<header>
 			<div class="navibar">
 				<img src="images/sudokuhub.png" alt="Website Icon">
-				<h1 class="title">[Homepage]</h1>
 			</div>
 		</header>
 		
@@ -24,9 +23,9 @@
 			<div class="navibar">
 				<table>
 					<tr>
-						<td class="navibar-button">Puzzles</td>
-						<td class="navibar-button">About Sudoku Puzzles</td>
-						<td class="navibar-button">Random Puzzle!</td>
+						<td class="navibar-button"><a href="htdocs/puzzle_list.html" style="color:white">Puzzles</a></td>
+						<td class="navibar-button"><a href="htdocs/about_sudoku.html" style="color:white">About Sudoku Puzzles</a></td>
+						<td class="navibar-button" id="randPuz">Random Puzzle!</td>
 						<td class="navibar-button">Puzzle Editor</td>
 						<td	class="navibar-button"><a href="index.html" style="color:white">Home</a></td>
 						<td class="navibar-button">Search...</td>
@@ -64,7 +63,7 @@
 					<section>
 					<div class="content-group" style="display:table;border-color:#0066ff">
 						<p style="text-align:left">
-						<a href="pages/puzzle_page.html" style="color:white">
+						<a href="htdocs/puzzle_00000001.html" class="puzzledesc">
 							<img src="images/sudokuicon-normal.png" alt="Puzzle Icon" class="icon">
 								<div style="vertical-align:middle;display:table-cell">
 									<b>Puzzle 001: <u>Test Sudoku</u></b><i>-    A classic sudoku puzzle. <br> Although, this one already has its "answers" filled in. It is a test sudoku puzzle, after all.</i>
@@ -83,11 +82,13 @@
 					<section>
 					<div class="content-group" style="display:table;border-color:#0066ff">
 						<p style="text-align:left">
-						<img src="images/sudokuicon-normal.png" alt="Puzzle Icon" class="icon">
-							<div style="vertical-align:middle;display:table-cell">
-								<b>Puzzle 002: <u>Future Sudoku</u></b><i>-    A classic sudoku puzzle. It will be shown at a later date. <br> It is currently shy and we're trying to help it gain the courage to make itself known. <br> Please wait for any updates regarding this situation. Thank you for understanding.</i>
-							</div>
-						</p>
+						<a href="htdocs/puzzle_00000002.html" class="puzzledesc">
+							<img src="images/sudokuicon-normal.png" alt="Puzzle Icon" class="icon">
+								<div style="vertical-align:middle;display:table-cell">
+									<b>Puzzle 002: <u>Second Sudoku</u></b><i>-    A classic sudoku puzzle. It will be filled in at a later date. <br> It has shown itself in its uncompleted state, and desperately needs your help to solve it. <br> Please wait for any updates that may allow you to input numbers. Thank you for understanding.</i>
+								</div>
+							</p>
+						</a>
 					</div>
 					</section>
 					
@@ -116,8 +117,8 @@
 					<div class="content-group" style="border-color:#cc3300;font-size:30px">
 						<p style="text-align:center">
 							<b>The Current Time Is:</b> <br>
-							00:00:00 AM UTC<br>
-							<i>January 04th, 2022</i>
+							<span id="time">00:00:00 AM</span><br>
+							<span id="date"><i>January 01st, 1970</i></span>
 						</p>
 					</div>
 					</section>
@@ -132,7 +133,7 @@
 					<div class="content-group" style="border-color:#0033cc;font-size:24px">
 						<p style="text-align:center">
 							<b>Audio Settings:</b> <br>
-							<button type="button" onclick="playintro()"><i>Play Audio</i></button><br>
+							<button class="audio-play" type="button" onclick="playintro()"><i>Play Audio</i></button><br>
 							<input type="range" min="0" step="0.01" max="1" value="1" id="volumeSlider">
 							<i><span id="audioOutput">100%</span></i>
 						</p>
@@ -167,7 +168,7 @@
 						<p style="text-align:left">
 						<img src="images/sudokuicon-downarrow.png" alt="Puzzle Icon" class="icon">
 							<div style="vertical-align:middle;display:table-cell">
-								<b><u>Sudoku Puzzle List (with more variants!)</u></b>
+								<a href="htdocs/puzzle_list.html" class="puzzledesc"><b><u>Sudoku Puzzle List (with more variants!)</u></b></a>
 							</div>
 						</p>
 					</div>
@@ -189,15 +190,40 @@
 		</footer>
 	
 	<script>
+		document.getElementById("randPuz").innerHTML = "<a href='htdocs/puzzle_" + (Math.floor(Math.random() * 2) + 1).toLocaleString("en-US", {minimumIntegerDigits: 8, useGrouping: false}) + ".html' style='color:white'>Random Puzzle!</a>";
 		var audioVolume = document.getElementById("volumeSlider").value;
 		var introAudio = document.getElementById("introMusic");
 
-		function playintro() {
+		function adjustIntro() {
 			audioVolume = document.getElementById("volumeSlider").value;
 			introAudio.volume = audioVolume;
 			document.getElementById("audioOutput").innerHTML = Math.round(audioVolume * 100) + "%"
+			
+			setTimeout(adjustIntro, 1);
+		}
+		adjustIntro();
+		
+		function playintro() {
 			introAudio.play();
 		}
+		
+		function updateDateAndTime() {
+			const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+			var date = new Date();
+			
+			var currentDate = months[date.getMonth()] + ' ' 
+							+ date.getDate().toLocaleString("en-US", {minimumIntegerDigits: 2, useGrouping: false}) + ', ' 
+							+ date.getFullYear();
+							
+			var currentTime = date.getHours().toLocaleString("en-US", {minimumIntegerDigits: 2, useGrouping: false}) + ':' 
+							+ date.getMinutes().toLocaleString("en-US", {minimumIntegerDigits: 2, useGrouping: false}) + ':' 
+							+ date.getSeconds().toLocaleString("en-US", {minimumIntegerDigits: 2, useGrouping: false});
+			document.getElementById("time").innerHTML = currentTime;
+			document.getElementById("date").innerHTML = currentDate;
+			
+			setTimeout(updateDateAndTime, 1000);
+		}
+		updateDateAndTime();
 	</script>
 	
 	</body>
