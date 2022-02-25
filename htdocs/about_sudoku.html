@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>SudokuHub: About</title>
+
+		<meta charset="UTF-8">
+		<meta name="author" content="Elijah Dray P. Sendad">
+		<meta name="keywords" content="HTML, CSS, CS3">
+		<meta name="revised" content="25-02-2022">
+	
+		<link rel="stylesheet" href="../css/styles.css" type="text/css" />
+	</head>
+	<body>
+	
+		<header>
+			<div class="navibar">
+				<img src="../images/sudokuhub.png" alt="Website Icon">
+			</div>
+		</header>
+		
+		<nav>
+			<div class="navibar">
+				<table>
+					<tr>
+						<td class="navibar-button"><a href="puzzle_list.html" style="color:white">Puzzles</a></td>
+						<td class="navibar-button"><a href="about_sudoku.html" style="color:white">About Sudoku Puzzles</a></td>
+						<td class="navibar-button" id="randPuz">Random Puzzle!</td>
+						<td class="navibar-button">Puzzle Editor</td>
+						<td	class="navibar-button"><a href="../index.html" style="color:white">Home</a></td>
+						<td class="navibar-button">Search...</td>
+					</tr>
+				</table>
+			</div>
+		</nav>
+		
+		<audio autoplay  id="introMusic">
+			<source src="mmfiles/intro-jingle.mp3" type="audio/mpeg">
+			Your browser doesn't support audio elements.
+		</audio>
+		
+		<div class="main">
+			<div class="box" style="display:flex; justify-content:center; font-size:18px">
+				<div>
+					<section>
+					<div class="content-group" style="border-color:#ffcc00">
+						<p style="text-align:center">
+							<b>Sudoku!</b> <br>
+							A simple yet challenging game where the main objective is to fill the 9x9 board with numbers.<br>
+							There are a set of rules for normal Classic Sudoku that must be followed for the solution to count.<br>
+						</p>
+					</div>
+					</section>
+					
+					<div class="divider">
+						<p style="text-align:center">
+							<b>|  |  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  |  |  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  |  |  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  |  |</b>
+						</p>
+					</div>
+					
+					<section>
+					<div class="content-group" style="display:table;border-color:#0066ff; padding: 2px">
+						<p style="text-align:left">
+							<div style="vertical-align:middle;display:table-cell">
+								<i>1. Each of the nine rows have to contain every digit from 1 to 9.</i><br>
+								<i>2. Each of the nine columns also have to contain every digit from 1 to 9.</i><br>
+								<i>3. In addition, each of the highlighted 3x3 boxes have to contain every digit from 1 to 9.</i><br>
+								<br>
+								<b>The final solution must have an equal number of every digit spread evenly across the entire board.</b>
+							</div>
+							</p>
+					</div>
+					</section>
+				</div>
+			</div>
+		</div>
+		
+		<footer>
+			<div class="footer">
+				<h4>
+					Notes, Credits, and References:
+				<br>All images, code, and information were created personally by Elijah Dray Sendad based on his prior experience on sudoku puzzles.
+				<br>Images were made using Microsoft Paint, a simple graphics editing tool included in all versions of Microsoft Windows. <a href="https://support.microsoft.com/en-us/windows/get-microsoft-paint-a6b9578c-ed1c-5b09-0699-4ed8115f9aa9">Get MS Paint</a>
+				<br>Audio is made using OnlineSequencer, an online music sequencer made by Jacob Morgan and George Burdell. <a href="https://onlinesequencer.net/">Website Link to the Sequencer</a>
+				<br>Coding help was provided by the CS3 LGs and W3Schools.
+				</h4>
+			</div>
+		</footer>
+	
+	<script>
+		document.getElementById("randPuz").innerHTML = "<a href='puzzle_" + (Math.floor(Math.random() * 2) + 1).toLocaleString("en-US", {minimumIntegerDigits: 8, useGrouping: false}) + ".html' style='color:white'>Random Puzzle!</a>";
+	</script>
+	
+	</body>
+</html>

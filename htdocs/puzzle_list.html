@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>SudokuHub: Puzzle List</title>
+
+		<meta charset="UTF-8">
+		<meta name="author" content="Elijah Dray P. Sendad">
+		<meta name="keywords" content="HTML, CSS, CS3">
+		<meta name="revised" content="25-02-2022">
+	
+		<link rel="stylesheet" href="../css/styles.css" type="text/css" />
+	</head>
+	<body>
+		<header>
+			<div class="navibar">
+				<img src="../images/sudokuhub.png" alt="Website Icon">
+			</div>
+		</header>
+		
+		<nav>
+			<div class="navibar">
+				<table>
+					<tr>
+						<td class="navibar-button"><a href="puzzle_list.html" style="color:white">Puzzles</a></td>
+						<td class="navibar-button"><a href="about_sudoku.html" style="color:white">About Sudoku Puzzles</a></td>
+						<td class="navibar-button" id="randPuz"  style="color:white">Random Puzzle!</td>
+						<td class="navibar-button">Puzzle Editor</td>
+						<td	class="navibar-button"><a href="../index.html" style="color:white">Home</a></td>
+						<td class="navibar-button">Search...</td>
+					</tr>
+				</table>
+			</div>
+		</nav>
+		
+		<div class="main">
+			<div class="box" style="display:flex; justify-content:center; font-size:18px">
+				<!-- Puzzle Showcase -->
+				<div>
+					<section>
+					<div class="content-group" style="border-color:#ffcc00">
+						<p style="text-align:center">
+							<b>This is the list of open puzzles!</b> <br>
+							This website will house a lot of puzzles, but for now, you may enjoy viewing two. <br>
+							<i>Have Fun Solving!</i>
+						</p>
+					</div>
+					</section>
+					
+					<div class="divider">
+						<p style="text-align:center">
+							<b>|  |  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  |  |  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  |  |  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  |  |</b>
+						</p>
+					</div>
+					
+					<section>
+					<div class="content-group" style="display:table;border-color:#0066ff">
+						<p style="text-align:left">
+						<a href="../htdocs/puzzle_00000001.html" class="puzzledesc">
+							<img src="../images/sudokuicon-normal.png" alt="Puzzle Icon" class="icon">
+								<div style="vertical-align:middle;display:table-cell">
+									<b>Puzzle 001: <u>Test Sudoku</u></b><br><i> [Classic, Complete]</i>
+								</div>
+							</p>
+						</a>
+					</div>
+					</section>
+					
+					<div class="divider">
+						<p style="text-align:center">
+							<b>|  |  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  |  |  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  |  |  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  |  |</b>
+						</p>
+					</div>
+					
+					<section>
+					<div class="content-group" style="display:table;border-color:#0066ff">
+						<p style="text-align:left">
+						<a href="../htdocs/puzzle_00000002.html" class="puzzledesc">
+							<img src="../images/sudokuicon-normal.png" alt="Puzzle Icon" class="icon">
+								<div style="vertical-align:middle;display:table-cell">
+									<b>Puzzle 002: <u>Second Sudoku</u></b><br><i> [Classic, Incomplete]</i>
+								</div>
+							</p>
+						</a>
+					</div>
+					</section>
+					
+					<div class="divider">
+						<p style="text-align:center">
+							<b>|  |  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  |  |  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  |  |  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  |  |</b>
+						</p>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<footer>
+			<div class="footer">
+				<h4>
+					Notes, Credits, and References:
+				<br>All images, code, and information were created personally by Elijah Dray Sendad based on his prior experience on sudoku puzzles.
+				<br>Images were made using Microsoft Paint, a simple graphics editing tool included in all versions of Microsoft Windows. <a href="https://support.microsoft.com/en-us/windows/get-microsoft-paint-a6b9578c-ed1c-5b09-0699-4ed8115f9aa9">Get MS Paint</a>
+				<br>Audio is made using OnlineSequencer, an online music sequencer made by Jacob Morgan and George Burdell. <a href="https://onlinesequencer.net/">Website Link to the Sequencer</a>
+				<br>Coding help was provided by the CS3 LGs and W3Schools.
+				</h4>
+			</div>
+		</footer>
+		
+		<script>
+			document.getElementById("randPuz").innerHTML = "<a href='puzzle_" + (Math.floor(Math.random() * 2) + 1).toLocaleString("en-US", {minimumIntegerDigits: 8, useGrouping: false}) + ".html' style='color:white'>Random Puzzle!</a>";
+		</script>
+	</body>
+</html>

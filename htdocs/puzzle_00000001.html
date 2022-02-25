@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>SudokuHub: Puzzle 1</title>
+
+		<meta charset="UTF-8">
+		<meta name="author" content="Elijah Dray P. Sendad">
+		<meta name="keywords" content="HTML, CSS, CS3">
+		<meta name="revised" content="25-02-2022">
+	
+		<link rel="stylesheet" href="../css/styles.css" type="text/css" />
+	</head>
+	<body>
+		<header>
+			<div class="navibar">
+				<img src="../images/sudokuhub.png" alt="Website Icon">
+			</div>
+		</header>
+		
+		<nav>
+			<div class="navibar">
+				<table>
+					<tr>
+						<td class="navibar-button"><a href="puzzle_list.html" style="color:white">Puzzles</a></td>
+						<td class="navibar-button"><a href="about_sudoku.html" style="color:white">About Sudoku Puzzles</a></td>
+						<td class="navibar-button" id="randPuz"  style="color:white">Random Puzzle!</td>
+						<td class="navibar-button">Puzzle Editor</td>
+						<td class="navibar-button"><a href="../index.html" style="color:white">Home</a></td>
+						<td class="navibar-button">Search...</td>
+					</tr>
+				</table>
+			</div>
+		</nav>
+		
+		<div class="main">
+			<div class="puzzle" style="width:1000px;margin:auto">
+				<!-- Main Box: The Puzzle -->
+				<div>
+					<section>
+						<div class="content-group" style="border-color:#ffcc00">
+							<p style="text-align:center">
+								<b>Sudoku Puzzle 001: Test Sudoku</b> <br>
+								A classic sudoku puzzle. Although, this one already has its "answers" filled in. It is a test sudoku puzzle, after all. <br>
+								<i>Have Fun Solving!</i>
+							</p>
+						</div>
+					</section>
+					
+					<div class="divider">
+						<p style="text-align:center">
+							<b>|  |  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  |  |  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  |  |  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  |  |</b>
+						</p>
+					</div>
+					
+					<section>
+					<div class="content-group" style="display:table;border-color:#0066ff">
+						<p style="text-align:left">
+						<table>
+							<tr>
+								<td>1</td>
+								<td>2</td>
+								<td>5</td>
+								<td>4</td>
+								<td>6</td>
+								<td>9</td>
+								<td>8</td>
+								<td>3</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>7</td>
+								<td>3</td>
+								<td>1</td>
+								<td>2</td>
+								<td>8</td>
+								<td>6</td>
+								<td>9</td>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>6</td>
+								<td>8</td>
+								<td>3</td>
+								<td>5</td>
+								<td>7</td>
+								<td>1</td>
+								<td>2</td>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>4</td>
+								<td>7</td>
+								<td>2</td>
+								<td>1</td>
+								<td>6</td>
+								<td>3</td>
+								<td>5</td>
+								<td>9</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>3</td>
+								<td>1</td>
+								<td>9</td>
+								<td>8</td>
+								<td>5</td>
+								<td>4</td>
+								<td>7</td>
+								<td>6</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>5</td>
+								<td>9</td>
+								<td>7</td>
+								<td>3</td>
+								<td>4</td>
+								<td>2</td>
+								<td>1</td>
+								<td>8</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>1</td>
+								<td>4</td>
+								<td>6</td>
+								<td>9</td>
+								<td>3</td>
+								<td>7</td>
+								<td>8</td>
+								<td>2</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>9</td>
+								<td>6</td>
+								<td>8</td>
+								<td>7</td>
+								<td>2</td>
+								<td>5</td>
+								<td>4</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>8</td>
+								<td>2</td>
+								<td>5</td>
+								<td>4</td>
+								<td>1</td>
+								<td>9</td>
+								<td>6</td>
+								<td>3</td>
+							</tr>
+						</table>
+						</p>
+					</div>
+					</section>
+					
+					<div class="divider">
+						<p style="text-align:center">
+							<b>|  |  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  |  |  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  |  |  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  |  |</b>
+						</p>
+					</div>
+					
+					<section>
+						<div class="content-group" style="display:table;border-color:#00cc00">
+							<p style="text-align:left">
+								<div style="vertical-align:middle;display:table-cell">
+									<div>
+										<table>
+											<tr>
+												<td class="navibar-button">Check</td>
+												<td class="navibar-button">Clear</td>
+												<td class="navibar-button">New</td>
+												<td class="navibar-button">More</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+								<b>Time Elapsed: </b><i>00:00</i><br>
+								<b>Current Time: </b><i><span id="time">00:00:00 AM</span></i>
+						</div>
+					</section>
+					
+					<section>
+						<div class="content-group" style="display:table;border-color:#ff66ff">
+							<p style="text-align:left">
+								<b>Rules:</b><br>
+								<i>1. Every row has to contain every unique digit from 1 to 9.</i><br>
+								<i>2. Every column has to contain every unique digit from 1 to 9.</i><br>
+								<i>3. Every 3x3 box highlighted (...soon) has to contain every unique digit from 1 to 9.</i><br>
+								<br>
+								<b>Notes:</b><br>
+								<i>As this "puzzle" is just a test to see if the website is alright, this cannot actually be solved.</i><br>
+								<i>Highlighting the key 3x3 boxes will be added in a future update.</i>
+							</p>
+						</div>
+					</section>
+					
+				</div>
+			</div>
+		</div>
+		
+		<footer>
+			<div class="footer">
+				<h4>
+					Notes, Credits, and References:
+				<br>All images, code, and information were created personally by Elijah Dray Sendad based on his prior experience on sudoku puzzles.
+				<br>Images were made using Microsoft Paint, a simple graphics editing tool included in all versions of Microsoft Windows. <a href="https://support.microsoft.com/en-us/windows/get-microsoft-paint-a6b9578c-ed1c-5b09-0699-4ed8115f9aa9">Get MS Paint</a>
+				<br>Audio is made using OnlineSequencer, an online music sequencer made by Jacob Morgan and George Burdell. <a href="https://onlinesequencer.net/">Website Link to the Sequencer</a>
+				<br>Coding help was provided by the CS3 LGs and W3Schools.
+				</h4>
+			</div>
+		</footer>
+		
+	<script>
+		document.getElementById("randPuz").innerHTML = "<a href='puzzle_" + (Math.floor(Math.random() * 2) + 1).toLocaleString("en-US", {minimumIntegerDigits: 8, useGrouping: false}) + ".html' style='color:white'>Random Puzzle!</a>";
+	
+		function updateTime() {
+			var date = new Date();
+			var time = date.getHours().toLocaleString("en-US", {minimumIntegerDigits: 2, useGrouping: false}) + ':' 
+							+ date.getMinutes().toLocaleString("en-US", {minimumIntegerDigits: 2, useGrouping: false}) + ':' 
+							+ date.getSeconds().toLocaleString("en-US", {minimumIntegerDigits: 2, useGrouping: false});
+			document.getElementById("time").innerHTML = time;
+			
+			setTimeout(updateTime, 1000);
+		}
+		updateTime();
+	</script>
+	</body>
+</html>
