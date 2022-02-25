@@ -93,3 +93,20 @@ td {
 	margin: 0px;
 	border: 3px dotted gray;
 }
+
+.audio-play {
+	border: 2px solid #eeeeee;
+	color: #333333;
+	margin: 0px;
+	font-size: 16px;
+	font-family: Candara;
+}
+
+.puzzledesc {
+	color: white;
+}
+
+.puzzledesc:hover {
+	color: orange;
+	transition: 0.5s;
+}
